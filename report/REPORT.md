@@ -128,9 +128,9 @@ chunker = HeaderAwareChunker(chunk_size=600)
 
 | Thành viên | Strategy | Retrieval Score (/10) | Điểm mạnh | Điểm yếu |
 |-----------|----------|----------------------|-----------|----------|
-| Tôi | HeaderAwareChunker + metadata filtering | 8/10 | Giữ được section Markdown; metadata filter giúp top-3 chính xác hơn | Cần embedding tốt hơn cho top-1; một số chunk cùng category vẫn được ưu tiên hơn |
-| [Tên] | FixedSizeChunker hoặc SentenceChunker | 6/10 | Triển khai đơn giản, dễ tin cậy với tài liệu ngắn | Dễ mất ngữ cảnh, không tận dụng được section Markdown |
-| [Tên] | RecursiveChunker hoặc custom split | 7/10 | Cân bằng độ dài chunk và giữ ngữ cảnh | Cần tùy chỉnh separator kỹ, có thể tạo quá nhiều chunk |
+| Bùi Trọng Anh | HeaderAwareChunker + metadata filtering | 8/10 | Giữ được section Markdown; metadata filter giúp top-3 chính xác hơn | Cần embedding tốt hơn cho top-1; một số chunk cùng category vẫn được ưu tiên hơn |
+| Nguyễn Bằng Anh | FixedSizeChunker hoặc SentenceChunker | 6/10 | Triển khai đơn giản, dễ tin cậy với tài liệu ngắn | Dễ mất ngữ cảnh, không tận dụng được section Markdown |
+| Đỗ Thị Thùy Trang | RecursiveChunker hoặc custom split | 7/10 | Cân bằng độ dài chunk và giữ ngữ cảnh | Cần tùy chỉnh separator kỹ, có thể tạo quá nhiều chunk |
 
 ### Khi nào strategy này mạnh và khi nào cần cải thiện
 
