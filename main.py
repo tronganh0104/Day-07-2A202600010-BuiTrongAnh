@@ -58,7 +58,7 @@ def load_documents_from_files(file_paths: list[str]) -> list[Document]:
 
 def demo_llm(prompt: str) -> str:
     """A simple mock LLM for manual RAG testing."""
-    preview = prompt[:400].replace("\n", " ")
+    preview = prompt[:400].replace(chr(13), "").replace("\n", " ")
     return f"[DEMO LLM] Generated answer from prompt preview: {preview}..."
 
 
@@ -109,7 +109,7 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
     search_results = store.search(query, top_k=3)
     for index, result in enumerate(search_results, start=1):
         print(f"{index}. score={result['score']:.3f} source={result['metadata'].get('source')}")
-        print(f"   content preview: {result['content'][:120].replace(chr(10), ' ')}...")
+        print(f"   content preview: {result['content'][:120].replace(chr(13), '').replace(chr(10), ' ')}...")
 
     print("\n=== KnowledgeBaseAgent Test ===")
     agent = KnowledgeBaseAgent(store=store, llm_fn=demo_llm)
